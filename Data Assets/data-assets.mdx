@@ -1,0 +1,19 @@
+---
+title: Data Assets
+---
+import dataAssetsPage from '@site/static/assets/data_assets_page.png';
+import dataAssetsDetailedView from '@site/static/assets/data_asset_detailed_view.png';
+
+<img src={dataAssetsPage} alt="Data Assets Page"/>
+
+The [Data Assets](https://app.sentra.io/assets) page contains a metadata catalog of your data in the asset level, meaning files, objects, DB tables, or groups of such objects with high correlation.
+
+You can view, filter, sort and group assets by different properties - general, classification, and the properties of the containing data store. The information can be viewed in a tabular format (in the app or exported as CSV), grouped or expanded with a detailed view by clicking on each data asset.
+
+The detailed view offers more information in multiple categories:
+* Summary - general information about the data asset, including size, update date, and number of specific objects grouped together by a data asset entity
+* Classification - a list of specific data classes found in the specific asset. Each data class can be removed with the Edit option to fine tune the catalog and improve the classification algorithm in the account
+* Objects - a list of specific objects grouped together in the asset. Objects in blob storage like S3 have a console link allowing you to further investigate them in your account console
+* Schema - a breakdown of the schema of different fields in tabular data assets, including column names and types
+
+<img src={dataAssetsDetailedView} alt="Detailed View"/>
