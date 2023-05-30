@@ -1,0 +1,91 @@
+---
+title: Data Stores
+---
+import dataStoresPage from '@site/static/assets/data_stores_page.png';
+import dataStoresDetailedView from '@site/static/assets/data_store_detailed_view.png';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<img src={dataStoresPage} alt="Data Stores Page"/>
+
+The [Data Stores](https://app.sentra.io/stores) page provides a metadata catalog of your data in the store level - buckets, databases, etc.
+
+You can view, filter, sort and group stores by different properties - general, classification, security, network & access. The information can be viewed in a tabular format (in the app or exported as CSV), grouped in a heatmap or expanded with a detailed view by clicking on each data store.
+
+## Supported Services
+Sentra provides automatic discovery and classification of data in various data sources, across main cloud providers and their services. Discovery includes full cataloging of existing data stores along with their metadata and security properties, while classification includes the detection of schema in tabular assets like DB tables and tabular objects (i.e. `json`, `parquet`, etc.)
+The following list describes the currently supported services in each platform.
+<Tabs>
+  <TabItem value="aws" label="AWS" default>
+
+## S3
+Fully supported discovery and classification of buckets and the objects they contain. Blob storage objects are grouped together for efficient scanning and simple visibility, into `Object Groups` with patterns like `path/to/data/[UUID].json`. Sentra has comprehensive support for various formats of objects in textual and tabular structures, as well as archive files with recursive scanning.
+## RDS and Aurora
+Fully supported discovery and classification of clusters, DB instances and the tables they contain. Sentra has full support for the RDS DB engines:
++ MySQL
++ PostgreSQL
++ MariaDB
++ Microsoft SQL Server
++ Oracle
+## Redshift
+Fully supported discovery and classification of instances and the tables they contain.
+## DynamoDB
+Fully supported discovery and classification of instances and the tables they contain.
+## DocumentDB
+Supported discovery of existing instances, their metadata and properties.
+## OpenSearch
+Supported discovery of existing instances, their metadata and properties.
+## ElastiCache
+Supported discovery of existing instances, their metadata and properties.
+## Neptune
+Supported discovery of existing instances, their metadata and properties.
+## Keyspaces
+Supported discovery of existing instances, their metadata and properties.
+## EC2 Unmanaged DBs
+Fully supported discovery and classification of DB instances and the tables they contain, hosted natively or with Kubernetes, ECS, or Docker.
+Sentra has full support for unmanaged DB engines of MySQL and PostgreSQL.
+## EC2 Filesystem
+Fully supported discovery and classification of files in EC2 filesystems.
+  </TabItem>
+  <TabItem value="azore" label="Azure">
+
+## Blob Storage
+Fully supported discovery and classification of blob containers and the objects they contain. Blob storage objects are grouped together for efficient scanning and simple visibility, into `Object Groups` with patterns like `path/to/data/[UUID].json`. Sentra has comprehensive support for various formats of objects in textual and tabular structures, as well as archive files with recursive scanning.
+## SQL Database
+Supported discovery of existing databases, their metadata and properties.
+## CosmosDB
+Supported discovery of existing databases, their metadata and properties.
+  </TabItem>
+  <TabItem value="snowflake" label="Snowflake">
+
+## Snowflake Data Warehouse
+Fully supported discovery and classification of databases and the tables they contain.
+  </TabItem>
+</Tabs>
+
+## Detailed View
+
+The detailed view offers more information in different categories:
+* Summary - general information about the data store, its classification and security properties
+* Assets - an example of data assets contained in that store. Click “View All…” to see the full list in the Data Assets page
+* Alerts - open alerts indicating risk of the specific data store
+* Access - a summary of permissions to the specific data store by different users and identities
+* Similar Data - a list of other stores containing similar or identical data assets as the specific data store
+
+<img src={dataStoresDetailedView} alt="Detailed View"/>
+
+
+The following properties are displayed in the summary section:
+* Name
+* Account
+* Region
+* Size
+* Database Engine
+* Hosting Service
+* Category
+* Managed
+* Age since creation
+* Classification
+* Security properties: publicly accessible, logging, backup, encryption
+* Networking
+* Tags
