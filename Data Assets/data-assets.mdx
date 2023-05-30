@@ -1,19 +1,108 @@
+
 ---
 title: Data Assets
 ---
-import dataAssetsPage from '@site/static/assets/data_assets_page.png';
-import dataAssetsDetailedView from '@site/static/assets/data_asset_detailed_view.png';
+
+The [Data Assets](https://app.sentra.io/assets) page serves as a repository of metadata cataloging your data at the asset level, encompassing files, objects, database tables, or groups of related objects that exhibit high correlation.
 
 <img src={dataAssetsPage} alt="Data Assets Page"/>
 
-The [Data Assets](https://app.sentra.io/assets) page contains a metadata catalog of your data in the asset level, meaning files, objects, DB tables, or groups of such objects with high correlation.
+## GUI Overview
 
-You can view, filter, sort and group assets by different properties - general, classification, and the properties of the containing data store. The information can be viewed in a tabular format (in the app or exported as CSV), grouped or expanded with a detailed view by clicking on each data asset.
+Within this page, there are various functionalities at your disposal to effectively manage and analyze the assets. User can effortlessly **view**, **filter**, **sort**, and **group** assets based on different properties. Properties can be:
 
-The detailed view offers more information in multiple categories:
-* Summary - general information about the data asset, including size, update date, and number of specific objects grouped together by a data asset entity
-* Classification - a list of specific data classes found in the specific asset. Each data class can be removed with the Edit option to fine tune the catalog and improve the classification algorithm in the account
-* Objects - a list of specific objects grouped together in the asset. Objects in blob storage like S3 have a console link allowing you to further investigate them in your account console
-* Schema - a breakdown of the schema of different fields in tabular data assets, including column names and types
+ - General Attributes
+ - Classification Characteristics
+ - Properties associated with the underlying Data Store
+
+The information is conveniently presented in a tabular format within the application as depicted in the above screenshot. There is also an option to export the available grid into a  downloadable **CSV** file. Furthermore, user can delve into a more detailed view of each data asset by simply clicking on it.
+
+### Detailed View
+
+Once any data asset is clicked, the detailed view provides an expanded perspective and presents information across multiple categories, including:
+
+**Summary:** This section offers general information about the data asset, such as its size, last update date, and the count of specific objects grouped together as part of the data asset entity.
+
+**Classification:** Here, user will find a list of specific data classes that have been identified within the given asset. User have the flexibility to remove individual data classes using the Edit option, allowing user to fine-tune the catalog and enhance the classification algorithm associated with the account.
+
+**Objects:** This category presents a list of specific objects that are grouped together within the asset. In the case of blob storage, such as S3, each object entry is accompanied by a console link, granting you the ability to further investigate and explore these objects within your account's console.
+
+**Schema:** For tabular data assets, this section provides a comprehensive breakdown of the schema, including column names and types, pertaining to various fields present within the asset.
 
 <img src={dataAssetsDetailedView} alt="Detailed View"/>
+
+By offering these detailed insights and functionalities, the Data Assets page empowers user to effectively manage, analyze, and optimize  data catalog, facilitating improved understanding and utilization of your valuable data resources.
+
+## Data Assets Attributes
+ Below are the comprehensive details of the attributes associated with data asset.
+ 
+### Sensitivity
+Each data asset is classified based on the sensitivity score that is calculated internally by the Sentra. The calculation process involves analyzing the data classes present in the objects and assessing their sensitivity levels. The sensitivity levels are assigned based on predefined criteria that determine the degree of sensitivity associated with each data class.
+
+<img src={sensitivityLevels} alt="Data Asset Sensitivity"/>
+
+In sensitivity classification, the terms **none**, **low**, **medium**, and **high** are used to describe the different sensitivity levels associated with data classes Here is a more explanation a a detailed breakdown of what each category means:
+
+**None:** Indicates that the data does not contain any sensitive information. It refers to data that is non-confidential, publicly available, or does not pose any significant risks if accessed or disclosed.
+
+**Low:** This level is assigned to data that contains relatively low-risk or moderately sensitive information. It implies that the data may have some level of confidentiality or privacy considerations, but the potential impact of its unauthorized access or disclosure is relatively minimal.
+
+**Medium:** The "Medium" sensitivity level indicates that the data contains moderately sensitive information that requires a higher level of protection. It implies that unauthorized access or disclosure of this data could result in moderate risks, such as privacy breaches, financial loss, or regulatory non-compliance.
+
+**High:** A high sensitivity level is assigned to data with highly confidential, sensitive, or sensitive information. This position means that unauthorized access or disclosure of this data could result in serious harm, such as significant economic loss, legal liability, defamation, breach of privacy or strong security measures including strong security measures including the strongest access controls, encryption, monitoring and auditing are required
+
+By categorizing data into these sensitivity levels, organizations can effectively determine the appropriate security measures and controls to implement. It allows for a more targeted approach in safeguarding sensitive information, mitigating risks, and ensuring compliance with data protection regulations and policies.
+
+### Context Labels 
+Context Labels are generated by utilizing metadata and contextual information associated with the assets. These labels serve as descriptive markers that provide additional insights into the assets based on various factors such as the asset's file path, location, and neighboring assets. Context Labels offer valuable contextual information without the need to scan the actual content of the asset.
+
+The available options for Context Labels encompass a range of values that help categorize and classify the assets. These options include:
+
+**Configuration:** This label indicates that the asset pertains to configuration-related information.
+
+**Log:** This label is assigned to assets that contain log data or log files.
+
+**Image:** Assets labeled with this indicate that they are image files or contain image data.
+
+**Tabular:** This label signifies that the asset contains tabular data or is structured in a table format.
+
+**Compression:** Assets labeled with this represent compressed files or data.
+
+**Source Code:** This label is assigned to assets that contain source code or programming scripts.
+
+**Documents:** Assets labeled as "Documents" typically refer to files containing textual or document-based content.
+
+**Binary:** This label is used for assets that consist of binary data or binary file formats.
+
+**Font:** Assets labeled as "Font" are related to font files or font-related data.
+
+**Cryptography:** This label indicates assets associated with cryptography or cryptographic operations.
+
+**Media:** Assets labeled as "Media" typically refer to files containing multimedia content, such as audio, video, or multimedia presentations.
+
+The Context Label feature enhances asset description by assigning additional tags based on the available metadata and contextual information. These tags provide further details about the asset, including its file path, location within the system, and other relevant characteristics. Data Context tags are derived from readily available information without the need for content scanning or analysis. They serve as supplementary descriptors that assist in understanding and organizing the assets based on their contextual attributes.
+
+## Available Filters
+
+In order to provide users with enhanced control over their data assets, two primary filters are available for their utilization. These filters serve as valuable tools in refining and organizing data according to specific criteria. Let's delve into the details of each filter category and its associated sub-filters.
+
+<img src={filterOption} alt="Available Filters"/>
+
+#### Data Asset Filter Category
+Under the Data Asset filter category, users can access various sub-filters to facilitate their search and management of data assets. These sub-filters include:
+
+**General:** This subset encompasses non-information fields such as size, account, type, last modified, and the associated data store. By utilizing these general filters, users can refine their search based on these fundamental attributes.
+
+**Classification:** This set of filters is designed to categorize data assets into different classes. It includes fields such as Data Categories (Unclassified, Credentials, Financial & Personal), Data Class, and Sensitivity (None, Low, Medium, High). Users can leverage these classification filters to effectively classify and sort their data assets.
+
+**Security:** This particular filter enables users to group data assets based on their security characteristics, such as private or public access. By utilizing this filter, users can conveniently filter and manage their data assets based on their security requirements.
+ 
+#### Data Store
+The Data Store filter category allows users to filter data assets based on their association with a particular data store. This category offers the following sub-filters:
+
+**General:** The general filters in this category focus on specific attributes related to the data store. These attributes include Database Engine, Category, Hosting Service, Managed Service, and Region. By employing these filters, users can effectively narrow down their search based on the aforementioned data store characteristics.
+
+**Security:** The security details of a data store are derived from its parent data store. Under this filter, users can access additional security-related filters, such as Encryption, Backup, and Publicly Accessible details. These filters enable users to refine their search based on the security features associated with the data store.
+
+> **Note:** It is important to note that each filter within these categories will display a comprehensive list of available values within the grid, allowing users to easily select and apply their desired filter criteria.
+
