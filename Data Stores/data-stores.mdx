@@ -1,91 +1,231 @@
 ---
 title: Data Stores
 ---
-import dataStoresPage from '@site/static/assets/data_stores_page.png';
-import dataStoresDetailedView from '@site/static/assets/data_store_detailed_view.png';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+The [Data Stores](https://app.sentra.io/stores) page within the Sentra portal serves as a comprehensive metadata repository that offers an organized and indexed catalog encompassing various facets of data residing at the store level, including but not limited to buckets, databases, and related entities.
 
 <img src={dataStoresPage} alt="Data Stores Page"/>
 
-The [Data Stores](https://app.sentra.io/stores) page provides a metadata catalog of your data in the store level - buckets, databases, etc.
+## GUI Overview
 
-You can view, filter, sort and group stores by different properties - general, classification, security, network & access. The information can be viewed in a tabular format (in the app or exported as CSV), grouped in a heatmap or expanded with a detailed view by clicking on each data store.
+The Data Stores page is a versatile tool that empowers users to manage and analyze their data stores effectively. It offers a comprehensive range of functionalities, including the ability to seamlessly **view**, **filter**, **sort**, and **group** data stores based on various properties. These properties include general information, classification attributes, security considerations, and network access parameters.
 
-## Supported Services
-Sentra provides automatic discovery and classification of data in various data sources, across main cloud providers and their services. Discovery includes full cataloging of existing data stores along with their metadata and security properties, while classification includes the detection of schema in tabular assets like DB tables and tabular objects (i.e. `json`, `parquet`, etc.)
-The following list describes the currently supported services in each platform.
-<Tabs>
-  <TabItem value="aws" label="AWS" default>
+The Data Stores page provides users with a structured tabular representation of the information, easily accessible within the application interface. This presentation format allows for convenient viewing and analysis of the data assets. Additionally, users can export the displayed information grid into a downloadable **Comma-Separated Values (CSV)** file. This feature enables users to analyze further and process the data using external tools and systems.
 
-## S3
-Fully supported discovery and classification of buckets and the objects they contain. Blob storage objects are grouped together for efficient scanning and simple visibility, into `Object Groups` with patterns like `path/to/data/[UUID].json`. Sentra has comprehensive support for various formats of objects in textual and tabular structures, as well as archive files with recursive scanning.
-## RDS and Aurora
-Fully supported discovery and classification of clusters, DB instances and the tables they contain. Sentra has full support for the RDS DB engines:
-+ MySQL
-+ PostgreSQL
-+ MariaDB
-+ Microsoft SQL Server
-+ Oracle
-## Redshift
-Fully supported discovery and classification of instances and the tables they contain.
-## DynamoDB
-Fully supported discovery and classification of instances and the tables they contain.
-## DocumentDB
-Supported discovery of existing instances, their metadata and properties.
-## OpenSearch
-Supported discovery of existing instances, their metadata and properties.
-## ElastiCache
-Supported discovery of existing instances, their metadata and properties.
-## Neptune
-Supported discovery of existing instances, their metadata and properties.
-## Keyspaces
-Supported discovery of existing instances, their metadata and properties.
-## EC2 Unmanaged DBs
-Fully supported discovery and classification of DB instances and the tables they contain, hosted natively or with Kubernetes, ECS, or Docker.
-Sentra has full support for unmanaged DB engines of MySQL and PostgreSQL.
-## EC2 Filesystem
-Fully supported discovery and classification of files in EC2 filesystems.
-  </TabItem>
-  <TabItem value="azore" label="Azure">
+Moreover, users can explore each data asset in greater detail by simply clicking on it. This action triggers a transition to a more comprehensive and expanded view, giving users a deeper understanding of the specific attributes and characteristics of the selected data asset. This enhanced level of detail facilitates thorough examination and informed decision-making for the respective data asset.
 
-## Blob Storage
-Fully supported discovery and classification of blob containers and the objects they contain. Blob storage objects are grouped together for efficient scanning and simple visibility, into `Object Groups` with patterns like `path/to/data/[UUID].json`. Sentra has comprehensive support for various formats of objects in textual and tabular structures, as well as archive files with recursive scanning.
-## SQL Database
-Supported discovery of existing databases, their metadata and properties.
-## CosmosDB
-Supported discovery of existing databases, their metadata and properties.
-  </TabItem>
-  <TabItem value="snowflake" label="Snowflake">
+### Detailed View
 
-## Snowflake Data Warehouse
-Fully supported discovery and classification of databases and the tables they contain.
-  </TabItem>
-</Tabs>
-
-## Detailed View
-
-The detailed view offers more information in different categories:
-* Summary - general information about the data store, its classification and security properties
-* Assets - an example of data assets contained in that store. Click “View All…” to see the full list in the Data Assets page
-* Alerts - open alerts indicating risk of the specific data store
-* Access - a summary of permissions to the specific data store by different users and identities
-* Similar Data - a list of other stores containing similar or identical data assets as the specific data store
+Once any data store is clicked, the detailed view provides an expanded perspective and presents information across multiple categories, including:
 
 <img src={dataStoresDetailedView} alt="Detailed View"/>
 
+**Summary:** This section provides general information about the data store, including pertinent details such as its classification and security properties. It offers an overview of the essential characteristics and attributes associated with the data store. The summary section presents the following properties:
 
-The following properties are displayed in the summary section:
-* Name
-* Account
-* Region
-* Size
-* Database Engine
-* Hosting Service
-* Category
-* Managed
-* Age since creation
-* Classification
-* Security properties: publicly accessible, logging, backup, encryption
-* Networking
-* Tags
+- **Name:** The identifier assigned to the entity.
+
+- **Account:** The associated account or owner of the entity.
+
+- **Region:** The geographical location where the entity is hosted or deployed.
+
+- **Size:** The allocated resources or capacity of the entity.
+
+- **Database Engine:** The specific database management system used by the entity.
+
+- **Hosting Service:** The service or platform utilized to host or deploy the entity.
+
+- **Category:** The classification or categorization of the entity based on its characteristics or purpose.
+
+- **Managed:** Indicates whether the entity is managed or requires manual administration.
+
+- **Age since creation:** The time since the entity was initially created.
+
+- **Classification:** Additional categorization or labeling based on specific criteria or attributes.
+
+- **Security properties:** Information regarding the entity's security measures, including whether it is publicly accessible, supports logging, backup functionality, or encryption.
+
+- **Networking:** The entity's network configuration and connectivity details.
+
+- **Tags:** AWS-based user-defined labels or metadata assigned to the entity for organizational or identification purposes.
+
+- **Open in Console:** Upon clicking this option, the user is redirected to the AWS instance of the selected data store.
+
+<img src={overviewPage} alt="Overview"/>
+
+**Assets:** Within this section, users can find an illustrative example of data assets associated with the selected data store. To access the complete list of data assets, users can click on the "View All..." option, which redirects them to the Data Assets page. This feature allows users to explore the entire inventory of data assets associated with the specific data store.
+
+**Alerts:** This section highlights any open alerts related to the specific data store. These alerts indicate potential risks or issues that require attention and mitigation. By monitoring the alerts associated with the data store, users can proactively address any vulnerabilities or threats that may impact the data store's integrity or security.
+
+**Access:** In this section, users can concisely summarize the permissions granted to different users and identities for accessing the specific data store. It provides insights into the level of access granted to various individuals or entities, ensuring that appropriate access controls and security measures are in place.
+
+**Similar Data:** This section presents a curated list of other data stores that contain similar or identical data assets as the specific data store under consideration. This feature enables users to identify and explore alternative data stores that may share commonalities or contain relevant information. It facilitates data discovery and encourages efficient data utilization by referencing comparable data sources.
+
+By leveraging the functionalities and information offered within these sections, users can comprehensively understand the selected data store, its associated assets, security status, access permissions, and related data repositories.
+
+### Supported Services
+
+Sentra provides automated mechanisms to perform data discovery and classification tasks across diverse data sources in major cloud providers and their associated services. The discovery process encompasses a comprehensive cataloging of existing data repositories, capturing pertinent metadata and security attributes. Meanwhile, the classification aspect entails identifying schema patterns within tabular assets, such as database tables and tabular objects encoded in formats like `JSON`, `Parquet`, and others.
+
+The following list describes the currently supported services in each platform.
+
+<Tabs>
+
+<TabItem value="aws" label="AWS" default>
+
+#### S3
+
+Sentra offers robust capabilities for the complete exploration and categorization of buckets and their constituent objects. Blob storage objects are logically organized into **Object Groups** using patterns like `path/to/data/[UUID].json` to facilitate efficient scanning and provide clear visibility. Sentra possesses extensive support for diverse formats of objects, including both textual and tabular structures. Furthermore, it enables recursive scanning of archive files to ensure comprehensive coverage during the discovery and classification process.
+
+#### [RDS](https://aws.amazon.com/rds/) and [Aurora](https://aws.amazon.com/rds/aurora/)
+
+Sentra offers comprehensive functionality for thoroughly exploring and classifying clusters, DB instances, and the tables residing within them. It provides complete support for the following RDS DB engines:
+
++ [MySQL](https://www.mysql.com)
+
++ [PostgreSQL](https://www.postgresql.org/)
+
++ [MariaDB](https://mariadb.org/)
+
++ [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server)
+
++ [Oracle](https://www.oracle.com/)
+
+#### [Redshift](https://aws.amazon.com/redshift/)
+
+Fully supported discovery and classification of instances and the tables they contain.
+
+#### [DynamoDB](https://www.amazonaws.cn/en/dynamodb/)
+
+Fully supported discovery and classification of instances and the tables they contain.
+
+#### [DocumentDB](https://aws.amazon.com/documentdb/)
+
+Supported discovery of existing instances, their metadata, and properties.
+
+#### [OpenSearch](https://opensearch.org/)
+
+Supported discovery of existing instances, their metadata, and properties.
+
+#### [ElastiCache](https://aws.amazon.com/elasticache/)
+
+Supported discovery of existing instances, their metadata, and properties.
+
+#### [Neptune](https://aws.amazon.com/neptune/)
+
+Supported discovery of existing instances, their metadata, and properties.
+
+#### [Keyspaces](https://aws.amazon.com/keyspaces/)
+
+Supported discovery of existing instances, their metadata, and properties.
+
+#### [EC2 Unmanaged DBs](https://aws.amazon.com/ec2/)
+
+Fully supported discovery and classification of DB instances and the tables they contain hosted natively or with Kubernetes, ECS, or Docker.
+
+Sentra has full support for unmanaged DB engines of MySQL and PostgreSQL.
+
+#### [EC2 Filesystem](https://aws.amazon.com/ec2/)
+
+Fully supported discovery and classification of files in EC2 filesystems.
+
+</TabItem>
+
+<TabItem value="azore" label="Azure">
+
+#### [Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction)
+
+Sentra offers extensive support for the complete discovery and classification of blob containers and their associated objects. Blob storage objects are intelligently grouped into **Object Groups** using patterns such as `path/to/data/[UUID].json`, enabling efficient scanning and facilitating clear visibility. Sentra boasts comprehensive support for a wide range of object formats encompassing textual and tabular structures. Additionally, it provides the capability to perform recursive scanning of archive files, ensuring comprehensive coverage during the discovery and classification process.
+
+#### [SQL Database](https://www.microsoft.com/en-us/sql-server)
+
+Supported discovery of existing databases, their metadata and properties.
+
+#### [CosmosDB](https://cosmos.azure.com/)
+
+Supported discovery of existing databases, their metadata and properties.
+
+</TabItem>
+
+<TabItem value="snowflake" label="Snowflake">
+
+#### [Snowflake Data Warehouse](https://www.snowflake.com/en/data-cloud/workloads/data-warehouse/)
+
+Fully supported discovery and classification of databases and the tables they contain.
+
+</TabItem>
+
+</Tabs>
+
+## Data Stores Attributes
+
+Below are the comprehensive details of the attributes associated with data stores.
+
+### Sensitivity
+
+Each data store is classified based on the sensitivity score calculated internally by Sentra. The calculation process involves analyzing the data classes present in the objects and assessing their sensitivity levels. The sensitivity levels are assigned based on predefined criteria that determine the degree of sensitivity associated with each data class.
+
+<img src={sensitivityLevels} alt="Data Asset Sensitivity"/>
+
+In sensitivity classification, the terms **none**, **low**, **medium**, and **high** describe the different sensitivity levels associated with data store. Here is a more explanation a detailed breakdown of what each category means:
+
+**None:** Indicates that the data contains no sensitive information. It refers to data that is non-confidential, publicly available or does not pose any significant risks if accessed or disclosed.
+
+**Low:** This level is assigned to data that contains relatively low-risk or moderately sensitive information. It implies that the data may have some level of confidentiality or privacy considerations, but the potential impact of its unauthorized access or disclosure is relatively minimal.
+
+**Medium:** The "Medium" sensitivity level indicates that the data contains moderately sensitive information that requires a higher level of protection. It implies that unauthorized access or disclosure of this data could result in moderate risks, such as privacy breaches, financial loss, or regulatory non-compliance.
+
+**High:** A high sensitivity level is assigned to highly confidential, sensitive, or sensitive data. This position means that unauthorized access or disclosure of this data could result in serious harm, such as significant economic loss, legal liability, defamation, breach of privacy, or strong security measures, including the most robust access controls, encryption, monitoring, and auditing are required
+
+Organizations can effectively determine the appropriate security measures and controls to implement by categorizing data into these sensitivity levels. It allows for a more targeted approach in safeguarding sensitive information, mitigating risks, and ensuring compliance with data protection regulations and policies.
+
+### Context Labels
+
+Context Labels are generated using metadata and contextual information associated with the data stores. These labels serve as descriptive markers that provide additional insights into the assets based on factors such as the data store's file path, location, and neighboring assets. Context Labels offer valuable contextual information without the need to scan the actual content of the data store.
+
+The available options for Context Labels encompass a range of values that help categorize and classify the assets. These options include:
+
+**Configuration:** This label indicates that the asset pertains to configuration-related information.
+
+**Log:** This label is assigned to assets that contain log data or log files.
+
+**Image:** Assets labeled with this indicate that they are image files or contain image data.
+
+**Tabular:** This label signifies that the asset contains tabular data or is structured in a table format.
+
+**Compression:** Assets labeled with this represent compressed files or data.
+
+**Source Code:** This label is assigned to assets that contain source code or programming scripts.
+
+**Documents:** Assets labeled as "Documents" typically refer to files containing textual or document-based content.
+
+**Binary:** This label is used for assets that consist of binary data or binary file formats.
+
+**Font:** Assets labeled "Font" are related to font files or data.
+
+**Cryptography:** This label indicates assets associated with cryptography or cryptographic operations.
+
+**Media:** Assets labeled as "Media" typically refer to files containing multimedia content, such as audio, video, or multimedia presentations.
+
+> **Note:** Assets here refers to AWS-based components relevant to the above options.
+
+The Context Label feature enhances asset description by assigning additional tags based on the available metadata and contextual information. These tags provide further details about the asset, including its file path, location within the system, and other relevant characteristics. Data Context tags are derived from readily available information without content scanning or analysis. They serve as supplementary descriptors that assist in understanding and organizing the assets based on their contextual attributes.
+
+## Available Filters
+
+To provide users with enhanced control over their data stores, two primary filters are available for their utilization. These filters serve as valuable tools in refining and organizing data according to specific criteria. Let's delve into the details of each filter category and its associated sub-filters.
+
+<img src={filterOption} alt="Available Filters"/>
+
+#### Data Stores Filter Category
+
+Under the Data Store filter category, users can access various sub-filters to facilitate their search and management of the data store. These sub-filters include:
+
+**General:** This subset encompasses non-information fields such as size, account, type, last modified, and the associated data store. Users can refine their search based on these fundamental attributes by utilizing these available filters.
+
+**Classification:** This set of filters is designed to categorize data stores into different classes. It includes fields such as Data Categories (Unclassified, Credentials, Financial & Personal), Data Class, and Sensitivity (None, Low, Medium, High). Users can leverage these filters to classify and sort their data stores effectively.
+
+**Security:** This filter enables users to group data stores based on their security characteristics, such as private or public access. By utilizing this filter, users can conveniently filter and manage their data stores based on their security requirements.
+
+**Network & Access:** This filter allows users to categorize data stores based on their network attributes and characteristics, including VPC ID, Security Group ID, Subnet Group, and Subnet IDs. By leveraging this filter, users can quickly sort and administer their data stores according to their network properties.
+
+> **Note:** It is important to note that each filter within these categories will display a comprehensive list of available values within the grid, allowing users to select and apply their desired filter criteria easily.
