@@ -1,12 +1,18 @@
 ---
 title: Data Stores
 ---
+import dataStoresPage from '@site/static/assets/data_stores_page.png';
+import dataStoresDetailedView from '@site/static/assets/data_store_detailed_view.png';
+import overviewPage from '@site/static/assets/overview-page.png';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 The [Data Stores](https://app.sentra.io/stores) page within the Sentra portal serves as a comprehensive metadata repository that offers an organized and indexed catalog encompassing various facets of data residing at the store level, including but not limited to buckets, databases, and related entities.
 
 <img src={dataStoresPage} alt="Data Stores Page"/>
 
-## GUI Overview
+## Page Overview
 
 The Data Stores page is a versatile tool that empowers users to manage and analyze their data stores effectively. It offers a comprehensive range of functionalities, including the ability to seamlessly **view**, **filter**, **sort**, and **group** data stores based on various properties. These properties include general information, classification attributes, security considerations, and network access parameters.
 
@@ -22,33 +28,33 @@ Once any data store is clicked, the detailed view provides an expanded perspecti
 
 **Summary:** This section provides general information about the data store, including pertinent details such as its classification and security properties. It offers an overview of the essential characteristics and attributes associated with the data store. The summary section presents the following properties:
 
-- **Name:** The identifier assigned to the entity.
+- **Name:** The identifier assigned to the data store.
 
-- **Account:** The associated account or owner of the entity.
+- **Account:** The associated account or owner of the data store.
 
-- **Region:** The geographical location where the entity is hosted or deployed.
+- **Region:** The geographical location where the data store is hosted or deployed.
 
-- **Size:** The allocated resources or capacity of the entity.
+- **Size:** The allocated resources or capacity of the data store.
 
-- **Database Engine:** The specific database management system used by the entity.
+- **Database Engine:** The specific database management system used by the data store.
 
-- **Hosting Service:** The service or platform utilized to host or deploy the entity.
+- **Hosting Service:** The service or platform utilized to host or deploy the data store.
 
-- **Category:** The classification or categorization of the entity based on its characteristics or purpose.
+- **Category:** The classification or categorization of the data store based on its characteristics or purpose.
 
-- **Managed:** Indicates whether the entity is managed or requires manual administration.
+- **Managed:** Indicates whether the data store is managed or requires manual administration.
 
-- **Age since creation:** The time since the entity was initially created.
+- **Age since creation:** The time since the data store was initially created.
 
 - **Classification:** Additional categorization or labeling based on specific criteria or attributes.
 
-- **Security properties:** Information regarding the entity's security measures, including whether it is publicly accessible, supports logging, backup functionality, or encryption.
+- **Security properties:** Information regarding the data stores security measures, including whether it is publicly accessible, supports logging, backup functionality, or encryption.
 
-- **Networking:** The entity's network configuration and connectivity details.
+- **Networking:** The data stores network configuration and connectivity details.
 
-- **Tags:** AWS-based user-defined labels or metadata assigned to the entity for organizational or identification purposes.
+- **Tags:** Cloud-based user defined labels or metadata assigned to the data store for organizational or identification purposes.
 
-- **Open in Console:** Upon clicking this option, the user is redirected to the AWS instance of the selected data store.
+- **Open in Console:** Upon clicking this option, the user is redirected to the cloud providerinstance of the selected data store.
 
 <img src={overviewPage} alt="Overview"/>
 
@@ -229,3 +235,4 @@ Under the Data Store filter category, users can access various sub-filters to fa
 **Network & Access:** This filter allows users to categorize data stores based on their network attributes and characteristics, including VPC ID, Security Group ID, Subnet Group, and Subnet IDs. By leveraging this filter, users can quickly sort and administer their data stores according to their network properties.
 
 > **Note:** It is important to note that each filter within these categories will display a comprehensive list of available values within the grid, allowing users to select and apply their desired filter criteria easily.
+
