@@ -2,20 +2,25 @@
 ---
 title: Data Assets
 ---
+import dataAssetsPage from '@site/static/assets/data_assets_page.png';
+import dataAssetsDetailedView from '@site/static/assets/data_asset_detailed_view.png';
+import filterOption from '@site/static/assets/filter_option.png';
+import sensitivityLevels from '@site/static/assets/sensitivity_levels.png';
+
 
 The [Data Assets](https://app.sentra.io/assets) page serves as a repository of metadata cataloging your data at the asset level, encompassing files, objects, database tables, or groups of related objects that exhibit high correlation.
 
 <img src={dataAssetsPage} alt="Data Assets Page"/>
 
-## GUI Overview
+## Page Overview
 
-Within this page, there are various functionalities at your disposal to effectively manage and analyze the assets. User can effortlessly **view**, **filter**, **sort**, and **group** assets based on different properties. Properties can be:
+Within this page, there are various functionalities at your disposal to effectively manage and analyze the assets. Users can effortlessly **view**, **filter**, **sort**, and **group** assets based on different properties. Properties can be:
 
  - General Attributes
  - Classification Characteristics
- - Properties associated with the underlying Data Store
+ - Properties of the underlying Data Store
 
-The information is conveniently presented in a tabular format within the application as depicted in the above screenshot. There is also an option to export the available grid into a  downloadable **CSV** file. Furthermore, user can delve into a more detailed view of each data asset by simply clicking on it.
+The information is conveniently presented in a tabular format within the application as depicted in the above screenshot. It is also possible to export the available grid into a  downloadable **CSV** file. Furthermore, Users can delve into a more detailed view of each data asset by simply clicking on it.
 
 ### Detailed View
 
@@ -23,7 +28,7 @@ Once any data asset is clicked, the detailed view provides an expanded perspecti
 
 **Summary:** This section offers general information about the data asset, such as its size, last update date, and the count of specific objects grouped together as part of the data asset entity.
 
-**Classification:** Here, user will find a list of specific data classes that have been identified within the given asset. User have the flexibility to remove individual data classes using the Edit option, allowing user to fine-tune the catalog and enhance the classification algorithm associated with the account.
+**Classification:** Here, Users will find a list of specific data classes that have been identified within the given asset. Users have the flexibility to remove individual data classes using the Edit option, allowing Users to fine-tune the catalog and enhance the classification algorithm associated with the account.
 
 **Objects:** This category presents a list of specific objects that are grouped together within the asset. In the case of blob storage, such as S3, each object entry is accompanied by a console link, granting you the ability to further investigate and explore these objects within your account's console.
 
@@ -31,7 +36,7 @@ Once any data asset is clicked, the detailed view provides an expanded perspecti
 
 <img src={dataAssetsDetailedView} alt="Detailed View"/>
 
-By offering these detailed insights and functionalities, the Data Assets page empowers user to effectively manage, analyze, and optimize  data catalog, facilitating improved understanding and utilization of your valuable data resources.
+By offering these detailed insights and functionalities, the Data Assets page empowers Users to effectively manage, analyze, and optimize  data catalog, facilitating improved understanding and utilization of your valuable data resources.
 
 ## Data Assets Attributes
  Below are the comprehensive details of the attributes associated with data asset.
@@ -84,25 +89,26 @@ The Context Label feature enhances asset description by assigning additional tag
 
 ## Available Filters
 
-In order to provide users with enhanced control over their data assets, two primary filters are available for their utilization. These filters serve as valuable tools in refining and organizing data according to specific criteria. Let's delve into the details of each filter category and its associated sub-filters.
+In order to provide Users with enhanced control over their data assets, two primary filters are available for their utilization. These filters serve as valuable tools in refining and organizing data according to specific criteria. Let's delve into the details of each filter category and its associated sub-filters.
 
 <img src={filterOption} alt="Available Filters"/>
 
 #### Data Asset Filter Category
-Under the Data Asset filter category, users can access various sub-filters to facilitate their search and management of data assets. These sub-filters include:
+Under the Data Asset filter category, Users can access various sub-filters to facilitate their search and management of data assets. These sub-filters include:
 
-**General:** This subset encompasses non-information fields such as size, account, type, last modified, and the associated data store. By utilizing these general filters, users can refine their search based on these fundamental attributes.
+**General:** This subset encompasses non-information fields such as size, account, type, last modified, and the associated data store. By utilizing these general filters, Users can refine their search based on these fundamental attributes.
 
 **Classification:** This set of filters is designed to categorize data assets into different classes. It includes fields such as Data Categories (Unclassified, Credentials, Financial & Personal), Data Class, and Sensitivity (None, Low, Medium, High). Users can leverage these classification filters to effectively classify and sort their data assets.
 
-**Security:** This particular filter enables users to group data assets based on their security characteristics, such as private or public access. By utilizing this filter, users can conveniently filter and manage their data assets based on their security requirements.
+**Security:** This particular filter enables Users to group data assets based on their security characteristics, such as private or public access. By utilizing this filter, Users can conveniently filter and manage their data assets based on their security requirements.
  
 #### Data Store
-The Data Store filter category allows users to filter data assets based on their association with a particular data store. This category offers the following sub-filters:
+The Data Store filter category allows Users to filter data assets based on their association with a particular data store. This category offers the following sub-filters:
 
-**General:** The general filters in this category focus on specific attributes related to the data store. These attributes include Database Engine, Category, Hosting Service, Managed Service, and Region. By employing these filters, users can effectively narrow down their search based on the aforementioned data store characteristics.
+**General:** The general filters in this category focus on specific attributes related to the data store. These attributes include Database Engine, Category, Hosting Service, Managed Service, and Region. By employing these filters, Users can effectively narrow down their search based on the aforementioned data store characteristics.
 
-**Security:** The security details of a data store are derived from its parent data store. Under this filter, users can access additional security-related filters, such as Encryption, Backup, and Publicly Accessible details. These filters enable users to refine their search based on the security features associated with the data store.
+**Security:** The security details of a data store are derived from its parent data store. Under this filter, Users can access additional security-related filters, such as Encryption, Backup, and Publicly Accessible details. These filters enable Users to refine their search based on the security features associated with the data store.
 
-> **Note:** It is important to note that each filter within these categories will display a comprehensive list of available values within the grid, allowing users to easily select and apply their desired filter criteria.
+> **Note:** It is important to note that each filter within these categories will display a comprehensive list of available values within the grid, allowing Users to easily select and apply their desired filter criteria.
+
 
