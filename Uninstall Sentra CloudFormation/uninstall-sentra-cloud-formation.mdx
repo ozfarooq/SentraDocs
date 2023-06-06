@@ -1,99 +1,116 @@
 
----
-title: Uninstall Sentra Associated CloudFormation
+<![endif]-->
+
 ---
 
+title: Uninstall Sentra Associated CloudFormation
+
+---
 
 import sentraAccounts from '@site/static/assets/sentra-accounts.png';
 
 import sentraBucket1 from '@site/static/assets/sentra-buckets1.png';
+
 import sentraBucket2 from '@site/static/assets/sentra-buckets2.png';
 
 import step1 from '@site/static/assets/step-1.png';
+
 import step3 from '@site/static/assets/step-3.png';
+
 import step4 from '@site/static/assets/step-4.png';
+
 import step5 from '@site/static/assets/step-5.png';
+
 import step6 from '@site/static/assets/step-6.png';
+
 import step9 from '@site/static/assets/step-9.png';
 
 import cloudFormationAWS from '@site/static/assets/cloudFormation-AWS.png';
 
-Sentra accout association with different cloud platforms once configured within the Sentra Account, can be uninstalled from the Cloud portal as well. User can redirect to [Sentra Accounts](https://app.sentra.io/accounts) 
+Once configured within the Sentra Account, the Sentra account association with different cloud platforms can also be uninstalled from the Cloud portal. Users can redirect to [Sentra Accounts](https://app.sentra.io/accounts)
 
 <img src={sentraAccounts} alt="Sentra Buckets AWS"/>
 
-Sentra currently supports Azure, AWS & Snowflake cloud platforms that once configured can be integrated with internal entities like Data Assets and Data Stores. For unused or inactive configured accounts, the Sentra account can be disassociated directly from the cloud platform it self. Here is how Sentra account can be removed from AWS directly. 
+Sentra currently supports Azure, AWS & Snowflake cloud platforms that can be integrated with internal entities like Data Assets and Data Stores once configured. Sentra accounts can be disassociated directly from the cloud platform for unused or inactive configured accounts. Here is how Sentra's account can be removed from AWS instantly.
 
 ## Uninstalling Sentra Account
-To uninstall Sentra and remove the associated resources using AWS CloudFormation, there are 2 steps that are to be followed:
+
+To uninstall Sentra and remove the associated resources using AWS CloudFormation, two steps are to be followed:
 
 1. Removing Scanner Account from AWS account
+
 2. Removing Target Account from AWS account
 
 ### Uninstalling Scanner Account
 
-Log in to the AWS account where you deployed the "Scanner Account" using Sentra. User need to ensure the below prerequsits are followed to avoid any configurational issues later on.
+Log in to the AWS account where you deployed the "Scanner Account" using Sentra. Users must follow the prerequisites below to avoid any later configurational issues.
 
 #### Prerequisites
-Ensure that Sentra's buckets, specifically the results and inputs buckets, are empty. To do this:
 
- 1. Go to the AWS S3 console.
- 2. Locate **Sentra's results and inputs buckets** in the search and retrieve all relevant buckets accordingly as shown in the below screenshot.
- 3. Click on each bucket individually and select the **`Empty`** option to remove all objects from the buckets.
- 
+Ensure that Sentra's buckets are empty, precisely the results and inputs buckets. To do this:
+
+1. Go to the AWS S3 console.
+
+2. Locate **Sentra's results and inputs buckets** in the search and retrieve all relevant buckets as shown in the screenshot below.
+
+3. Click on each bucket individually and select the **`Empty`** option to remove all objects from the buckets.
+
 <img src={sentraBucket1} alt="Sentra Buckets AWS"/>
+
 <img src={sentraBucket2} alt="Sentra Buckets AWS"/>
 
 #### Uninstalling Sentra StackSet
-The next step is to delete the Sentra associated StackSets . Below steps depicts the exact flow for the users.
 
- 1. Navigate to the CloudFormation console and select **StackSets**.
- 
-  <img src={step1} alt="Select StackSets"/>
- 
- 2. Locate the StackSet associated with Sentra. Its name typically follows the format: **`SentraStackSet-<8 Letters>`**.
+The next step is to delete the Sentra associated StackSets. The below steps depict the exact flow for the users.
 
- 3. Click on the relevant StackSet and select **Actions** followed by **Delete stacks from StackSet**.
- 
- <img src={step3} alt="Delete Stacks"/>
- 
- 4. In the **Account numbers** field, enter your AWS account number.
- 
- <img src={step4} alt="Account Numbers"/>
-	
- 5. Click on **Add all regions** to include all regions in the uninstallation process.
- 
- <img src={step5} alt="Add all regions"/>
- 
- 6. Choose **Parallel** as the **Region Concurrency** option.
- 
- <img src={step6} alt="Region Concurrency"/>
+1. Navigate to the CloudFormation console and select **StackSets**.
 
- 7. Click **Next** and then **Submit**.
+<img src={step1} alt="Select StackSets"/>
 
- 8. Go to the **Stack instances** section and wait until all instances are deleted.
+2. Locate the StackSet associated with Sentra. Its name typically follows the format: **`SentraStackSet-<8 Letters>`**.
 
- 9. Select "Actions" and choose **Delete StackSet**.
- 
- <img src={step9} alt="Delete StackSet"/>
+3. Click on the relevant StackSet and select **Actions** followed by **Delete stacks from StackSet**.
 
- 10. Proceed to the CloudFormation console and select **Stacks**.
+<img src={step3} alt="Delete Stacks"/>
 
- 11. Locate Sentra's Stack and click on its name.
+4. Enter your AWS account number in the **Account numbers** field.
 
- 12. Click on **Delete** and confirm the deletion by selecting **Delete stack**.
+<img src={step4} alt="Account Numbers"/>
+
+5. Click on **Add all regions** to include all areas in the uninstallation process.
+
+<img src={step5} alt="Add all regions"/>
+
+6. Choose **Parallel** as the **Region Concurrency** option.
+
+<img src={step6} alt="Region Concurrency"/>
+
+7. Click **Next** and then **Submit**.
+
+8. Go to the **Stack instances** section and wait until all instances are deleted.
+
+9. Select "Actions" and choose **Delete StackSet**.
+
+<img src={step9} alt="Delete StackSet"/>
+
+10. Proceed to the CloudFormation console and select **Stacks**.
+
+11. Locate Sentra's Stack and click on its name.
+
+12. Click on **Delete** and confirm the deletion by selecting **Delete stack**.
 
 #### Uninstalling Target Account
-Once StackSet is deleted, the next step is to completely uninstall Sentra from the Target Account which can be  performed by  the following steps:
 
- 1. Access the "CloudFormation" service in the AWS Management Console.
- 
- 2. Navigate to the "Stacks" section.
- 
-   <img src={cloudFormationAWS} alt="CloudFormation AWS Console"/>
- 
- 3. Locate the specific Stack associated with Sentra and click on its name. [CloudFormation] Uninstalling Sentra 4
- 
- 4. Within the Stack details, click on "Delete" and confirm the deletion process by selecting "Delete stack".
+Once StackSet is deleted, the next step is to completely uninstall Sentra from the Target Account, which the following steps can perform:
 
-Once Stack is deleted, all associated of Sentra and the relevant AWS accounts are disconnected and cannot be used untill its configured back again.
+1. Access the "CloudFormation" service in the AWS Management Console.
+
+2. Navigate to the "Stacks" section.
+
+<img src={cloudFormationAWS} alt="CloudFormation AWS Console"/>
+
+3. Locate the specific Stack associated with Sentra and click on its name. [CloudFormation] Uninstalling Sentra 4
+
+4. Within the Stack details, click "Delete" and confirm the deletion process by selecting "Delete stack."
+
+Once Stack is deleted, all associated Sentra and the relevant AWS accounts are disconnected and cannot be used until it is configured again.
