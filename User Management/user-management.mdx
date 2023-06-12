@@ -1,0 +1,56 @@
+---
+title: User Management
+---
+
+import userScreen from '@site/static/assets/user-screen.png';
+import sso from '@site/static/assets/sso.png';
+
+The Sentra platform offers a robust User Management module that allows for comprehensive control over user privileges. Upon adding a user to the system, their assigned role dictates the specific feature set accessible to them when accessing the User Settings.
+
+<img src={userScreen} alt="Sentra Users"/>
+
+## Creating New User
+ 
+The process of creating a new user within the Sentra platform can be accomplished through two distinct methods, each catering to different scenarios and user requirements.
+
+### Support Request
+When external users wish to gain access to the Sentra portal, they typically submit a support request to the Sentra support team. The support team then utilizes the information provided by the requestor to generate a new user account on their behalf. Once the user account is created, the support team furnishes the requestor with the necessary access details, enabling them to log in and utilize the platform according to their assigned user role.
+    
+### SSO User Provisioning
+
+<img src={sso} alt="SSO (Single Sign-On)"/>
+
+Sentra facilitates Single Sign-On (SSO) based user provisioning, which streamlines the user creation process. With this method, when a user logs into Sentra through an SSO provider, a new user account is automatically generated for them within the Sentra platform. The permissions and privileges associated with the SSO are then utilized to determine the user's access level and feature set within Sentra. This ensures a seamless and efficient user provisioning experience, eliminating the need for manual user creation and administration.
+    
+By offering these two user creation mechanisms, Sentra caters to the diverse needs of its users, whether they require assistance from the support team or leverage the convenience of SSO-based account generation. This flexibility and adaptability contribute to a user-friendly experience while maintaining robust security and access control measures.
+
+## Page Overview
+The [Users](https://app.sentra.io/users) page in Sentra allows user to effectively manage and analyze onboarded users. It offers various features to **view**, **filter** and **sort** users based on different properties.
+
+<img src={userScreen} alt="Sentra Users"/>
+
+The information is conveniently presented in a tabular format within the application as depicted in the above screenshot. It is also possible to export the available grid into a  downloadable **CSV** file.  Here are the list of user properties to view in this page.
+
+**Name:** Registered user name. 
+
+**Email:** Registered email address of the user. 
+
+**Status:** User status that can be either **`Enabled`** or **`Disabled`**
+
+**Role:** This column indicate the user role that can be one of **`Admin`**, **`Member`** or **`Viewer`**. The Admin user will be able to view this in the dropdown which enable the Admins to change the user role as per the requirement. On this screen, the Admin can enable or disable the user  and even change the user role assignment as per the requirements.
+
+## User Role
+There exist three distinct user roles within Sentra, each with its own set of permissions and capabilities:
+
+### Admin
+This role encompasses the highest level of authority, granting users full permissions, including administrative settings, connectivity with cloud accounts, integrations, and a wide range of additional functionalities.
+
+### Member
+Users assigned the Member role possess permissions to create and modify policies, as well as view and address alerts. However, they are restricted from accessing administrative settings to maintain system integrity and control.
+
+### Viewer
+The Viewer role is designed for individuals who require read-only access. Viewers are unable to make modifications to policies or resolve alerts; their access is limited solely to viewing the information presented within the platform.
+
+
+
+
